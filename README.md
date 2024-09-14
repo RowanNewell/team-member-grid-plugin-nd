@@ -1,0 +1,1 @@
+This WordPress plugin allows you to add team members in the dashboard as a custom post type. The grid on the front end displays 3 team members per row, when a team member is clicked, their details open full width under that row. 
