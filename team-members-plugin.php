@@ -2,7 +2,7 @@
 /*
 Plugin Name: Team Members Grid Plugin
 Description: A plugin to display team members with customizable fields and styling options.
-Version: 0.51
+Version: 0.60
 Author: NUEL Digital
 */
 

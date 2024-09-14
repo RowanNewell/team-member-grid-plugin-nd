@@ -38,16 +38,10 @@ jQuery(document).ready(function($) {
             }
 
             // Get the necessary details from the clicked member
-            const picture = $(this).find("img").attr("src");
-            const name = $(this).find("h3").text();
-            const title = $(this).find("h4").text();
-            const description = $(this).attr("data-description"); // Make sure the data attribute is correctly populated
-
-            // If any of the required data is undefined, log the error for debugging
-            if (!picture || !name || !title || !description) {
-                console.error("Some of the required data is missing or undefined.", { picture, name, title, description });
-                return; // Prevent further execution if data is missing
-            }
+            const picture = $(this).find("img").attr("src") || ''; // Default to empty string if not available
+            const name = $(this).find("h3").text() || 'Unnamed'; // Default to 'Unnamed' if name is not provided
+            const title = $(this).find("h4").text() || ''; // Default to empty string if not available
+            const description = $(this).attr("data-description") || ''; // Default to empty string if not available
 
             // Create a new detail container
             const detailContainer = $(`
@@ -55,7 +49,7 @@ jQuery(document).ready(function($) {
                     <div class="team-member-content-nd">
                         <div class="img-cont" style="background-image: url('${picture}');"></div>
                         <div class="text-content-nd">
-                            <h3>${name}</h4>
+                            <h3>${name}</h3>
                             <h4>${title}</h4>
                             <p>${description}</p>
                         </div>
