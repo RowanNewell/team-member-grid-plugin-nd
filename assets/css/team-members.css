@@ -18,6 +18,39 @@
     padding: 0;
     border-radius: 14px;
     box-shadow: 0 5px 6px #0000000f;
+    background:white;
+    position: relative;
+    overflow: hidden; /* Ensure the overlay stays within the image bounds */
+}
+
+.image-container-nd {
+    position: relative;
+    display: inline-block;
+    border-radius: inherit; /* Inherit border-radius from parent */
+    overflow:hidden;
+}
+
+.image-container-nd img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-container-nd::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0); /* Start with transparent red */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    border-radius: inherit; /* Ensure the overlay follows the border radius */
+    z-index:1;
+}
+
+.team-member-nd:hover .image-container-nd::before {
+    background-color: rgba(255, 0, 0, 0.1); /* Red overlay with 50% opacity on hover */
 }
 
 .team-member-nd img {
@@ -26,11 +59,20 @@
     aspect-ratio: 4 / 4; /* Ensures the image maintains a 4:4 aspect ratio */
     object-fit: cover; /* Ensures the image covers the entire container without stretching */
     border-radius:14px 14px 0 0;
+    transition: all ease 0.5s
 }
+
+.team-member-nd:hover img:first-child {
+    transform: scale(1.05);
+  }
 
 .team-member-titles-nd {
     padding:30px;
 }
+
+.team-member-nd:hover img.chevron-nd {
+    filter: grayscale(50%);
+  }
 
 .team-member-nd h3, .text-content-nd h3 {
     margin-top: 10px;
@@ -84,6 +126,8 @@
     position: relative;
     box-shadow: 0 5px 8px #00000017;
     border-radius: 14px;
+    background:white;
+    overflow:hidden;
 }
 
 .img-cont {
