@@ -131,11 +131,11 @@
 }
 
 .img-cont {
-    background-image: url('https://starter.nuel.digital/wp-content/uploads/2024/08/20FDDF4C-A896-4EF1-A265-F9D5570D8C8C.jpg');
-    width: 80%;
+    background-image: url('');
+    width: 50%;
     display: flex;
     align-self: stretch;
-    background-position: center;
+    background-position: top center;
     background-size: cover;
     border-radius: 14px 0 0 14px;
   }
